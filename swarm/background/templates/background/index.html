@@ -1,0 +1,4 @@
+<form action="{% url 'background_index' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" name="run_function">Run Function</button>
+</form>
