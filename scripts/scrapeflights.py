@@ -24,6 +24,9 @@ def fill_airport_field(driver, wait, aria_label_fragment, airport_code):
 def scrape_flights_ui(origin, destination, departure_date, return_date):
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1920,1080")
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     wait = WebDriverWait(driver, 20)
