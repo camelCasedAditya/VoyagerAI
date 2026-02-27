@@ -105,6 +105,7 @@ def scrape_flights_ui(origin, destination, departure_date, return_date):
                     print("-" * 60)
     finally:
         driver.quit()
+    return flights
 
 # Example usage
 # start = input("Origin airport code (e.g. LAX): ")

@@ -2,11 +2,12 @@ import os
 import json
 import time
 from cerebras.cloud.sdk import Cerebras
+from .scrapeflightai import scrape_flight_info
 
 MODEL_ID = "gpt-oss-120b"
 
 client = Cerebras(
-    api_key="" + os.getenv("CEREBRAS_API_KEY"),
+    api_key="csk-t5cdem3w8w4hepvkderrd8jjf6893nnh9efmhhv8yv3fwdjd",
 )
 
 user_prompt = "Find me a flight from Los Angeles to New York departing on May fifth 2026 and returning on May 20th, 2026."
@@ -30,5 +31,11 @@ response = client.chat.completions.create(
     temperature=0.7
 )
         
-content = response.choices[0].message.content
+content = json.loads(response.choices[0].message.content)
 print(content)
+start_airport_code = content["start_airport_code"]
+end_airport_code = content["end_airport_code"]
+departure_date = content["departure_date"]
+return_date = content["return_date"]
+print(content["start_airport_code"])
+flights = scrape_flight_info(start_airport_code, end_airport_code, departure_date, return_date)
