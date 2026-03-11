@@ -1,0 +1,10 @@
+{
+    "errors": [
+        {
+            "code": 38196,
+            "title": "Resource not found",
+            "detail": "The targeted resource doesn't exist",
+            "status": 404
+        }
+    ]
+}
