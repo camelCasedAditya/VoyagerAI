@@ -107,10 +107,4 @@ def scrape_flights_ui(origin, destination, departure_date, return_date):
         driver.quit()
     return flights
 
-# Example usage
-# start = input("Origin airport code (e.g. LAX): ")
-# end = input("Destination airport code (e.g. HND): ")
-# departure = input("Departure date (e.g. May 15, 2026): ")
-# return_date = input("Return date (e.g. May 30, 2026): ")
-# scrape_flights_ui(start, end, departure, return_date)
 scrape_flights_ui("PDX", "JFK", "05/08/2026", "05/30/2026")

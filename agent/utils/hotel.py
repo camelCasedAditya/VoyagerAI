@@ -1,7 +1,44 @@
 import requests
 import json
+from langchain_core.tools import tool
 
-from classes.hotelclass import Hotel
+
+class Hotel:
+    def __init__(self, hotel_id, iata_code, dupe_id, chain_code, name, address, rating, price, latitude, longitude, city):
+        self.hotel_id = hotel_id
+        self.iata_code = iata_code
+        self.dupe_id = dupe_id
+        self.chain_code = chain_code
+        self.name = name
+        self.address = address
+        self.price = price
+        self.latitude = latitude
+        self.longitude = longitude
+        self.city = city
+    def print_info(self):
+        print(f"Hotel ID: {self.hotel_id}")
+        print(f"IATA Code: {self.iata_code}")
+        print(f"Dupe ID: {self.dupe_id}")
+        print(f"Chain Code: {self.chain_code}")
+        print(f"Hotel Name: {self.name}")
+        print(f"Address: {self.address}")
+        print(f"City: {self.city}")
+        print(f"Price: {self.price}")
+        print(f"Latitude: {self.latitude}")
+        print(f"Longitude: {self.longitude}")
+    def to_json(self):
+        return {
+            "hotel_id": self.hotel_id,
+            "iata_code": self.iata_code,
+            "dupe_id": self.dupe_id,
+            "chain_code": self.chain_code,
+            "name": self.name,
+            "address": self.address,
+            "price": self.price,
+            "latitude": self.latitude,
+            "longitude": self.longitude,
+            "city": self.city
+        }
 
 CLIENT_ID = "UeWgxTGaWBFrqGL7cmyfQveL511HYpNd"
 CLIENT_SECRET = "17lAz6FPkr6oAzbH"
@@ -46,7 +83,10 @@ def gecode_address(address):
 
     return latitude, longitude
 
-def get_hotels(address):
+# @tool("get_hotels", return_direct=True)
+def get_hotels(address: str, radius: float) -> list[dict]:
+
+
     latitude, longitude = gecode_address(address)
 
     auth_response = requests.post(
@@ -65,7 +105,7 @@ def get_hotels(address):
         params={
             "latitude": latitude,
             "longitude": longitude,
-            "radius": 5,
+            "radius": radius,
             "radiusUnit": "KM",
             "hotelSource": "ALL"
         }
@@ -82,7 +122,7 @@ def get_hotels(address):
             if item.hotel_id == i[0]:
                 temp_object = item
                 temp_object.price = details["data"][i[1]]["offers"][0]["price"]["total"]
-                final_hotels.append(temp_object)
+                final_hotels.append(temp_object.to_json())
     return final_hotels
 
 
@@ -118,5 +158,4 @@ def parse_hotels(hotels_data):
         )
         list_of_hotels.append(hotel)
     return list_of_hotels
-
-get_hotels("1600 Amphitheatre Parkway, Mountain View, CA")
+print(get_hotels("1600 Amphitheatre Parkway, Mountain View, CA", 10))
