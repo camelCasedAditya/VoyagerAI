@@ -6,7 +6,6 @@ class Hotel:
         self.chain_code = chain_code
         self.name = name
         self.address = address
-        self.rating = rating
         self.price = price
         self.latitude = latitude
         self.longitude = longitude
@@ -19,5 +18,6 @@ class Hotel:
         print(f"Hotel Name: {self.name}")
         print(f"Address: {self.address}")
         print(f"City: {self.city}")
-        print(f"Rating: {self.rating}")
         print(f"Price: {self.price}")
+        print(f"Latitude: {self.latitude}")
+        print(f"Longitude: {self.longitude}")

@@ -7,6 +7,7 @@ def agent_query(request):
         form = AgentForm(request.POST)
         if form.is_valid():
             agent_query = form.cleaned_data['agent_query']
+            print("Received agent query:", agent_query)
             return render(request, 'travel/agent_query.html', {'form': form, 'success': True})
     else:
         form = AgentForm()
