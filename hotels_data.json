@@ -1,0 +1,652 @@
+{
+    "data": [
+        {
+            "chainCode": "WV",
+            "iataCode": "SJC",
+            "dupeId": 700046309,
+            "name": "COUNTY INN",
+            "hotelId": "WVSJCCOU",
+            "geoCode": {
+                "latitude": 37.40563,
+                "longitude": -122.0665
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94043",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "850 LEONGDRIVE"
+                ]
+            },
+            "distance": {
+                "value": 2.52,
+                "unit": "KM"
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:18"
+        },
+        {
+            "chainCode": "WV",
+            "iataCode": "MRY",
+            "dupeId": 700100546,
+            "name": "COLONIAL TERRACE INN",
+            "hotelId": "WVMRY558",
+            "geoCode": {
+                "latitude": 37.40752,
+                "longitude": -122.10857
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "93921",
+                "stateCode": "CA",
+                "cityName": "CARMEL BY THE SEA",
+                "lines": [
+                    "1375 SAN ANTONIO STREET"
+                ]
+            },
+            "distance": {
+                "value": 2.62,
+                "unit": "KM"
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:25"
+        },
+        {
+            "chainCode": "UZ",
+            "iataCode": "NUQ",
+            "dupeId": 700119518,
+            "name": "OAKWOOD AT EAVES MOUNTAIN VIEW",
+            "hotelId": "UZNUQ001",
+            "geoCode": {
+                "latitude": 37.39869,
+                "longitude": -122.07184
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94043",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "555 WEST MIDDLEFIELD ROAD"
+                ]
+            },
+            "distance": {
+                "value": 2.91,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:18:08"
+        },
+        {
+            "chainCode": "IL",
+            "iataCode": "NUQ",
+            "dupeId": 501719853,
+            "name": "ELF HOMES SHERLAND AVENUE",
+            "hotelId": "ILNUQ201",
+            "geoCode": {
+                "latitude": 37.39952,
+                "longitude": -122.05969
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94043",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "201 SHERLAND AVE"
+                ]
+            },
+            "distance": {
+                "value": 3.43,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-10-07T09:03:09"
+        },
+        {
+            "chainCode": "RC",
+            "iataCode": "SJC",
+            "dupeId": 700115675,
+            "name": "RESIDENCE INN MTN VW MARRIOTT",
+            "hotelId": "RCSJCMVR",
+            "geoCode": {
+                "latitude": 37.39264,
+                "longitude": -122.09533
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "1854 W EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.43,
+                "unit": "KM"
+            },
+            "masterChainCode": "EM",
+            "lastUpdate": "2025-06-03T10:17:13"
+        },
+        {
+            "chainCode": "CY",
+            "iataCode": "PAO",
+            "dupeId": 700103546,
+            "name": "COURTYARD PALO ALTO MARRIOTT",
+            "hotelId": "CYPAOCYC",
+            "geoCode": {
+                "latitude": 37.40459,
+                "longitude": -122.11802
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94022",
+                "stateCode": "CA",
+                "cityName": "LOS ALTOS",
+                "lines": [
+                    "4320 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.49,
+                "unit": "KM"
+            },
+            "masterChainCode": "EM",
+            "lastUpdate": "2026-03-02T06:14:25"
+        },
+        {
+            "chainCode": "RC",
+            "iataCode": "PAO",
+            "dupeId": 700115867,
+            "name": "RESIDENCE INN LOS ALT MARRIOTT",
+            "hotelId": "RCPAORIR",
+            "geoCode": {
+                "latitude": 37.40363,
+                "longitude": -122.11737
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94022",
+                "stateCode": "CA",
+                "cityName": "LOS ALTOS",
+                "lines": [
+                    "4460 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.5,
+                "unit": "KM"
+            },
+            "masterChainCode": "EM",
+            "lastUpdate": "2026-03-02T06:13:29"
+        },
+        {
+            "chainCode": "DI",
+            "iataCode": "PAO",
+            "dupeId": 700071241,
+            "name": "DAYS INN PALO ALTO",
+            "hotelId": "DIPAO301",
+            "geoCode": {
+                "latitude": 37.40538,
+                "longitude": -122.11914
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "4238 EL CAMINO REAL",
+                    "HWY-101 & SAN ANTONIO"
+                ]
+            },
+            "distance": {
+                "value": 3.52,
+                "unit": "KM"
+            },
+            "masterChainCode": "WR",
+            "lastUpdate": "2025-06-03T10:16:33"
+        },
+        {
+            "chainCode": "CI",
+            "iataCode": "PAO",
+            "dupeId": 700048076,
+            "name": "COMFORT INN PALO ALTO",
+            "hotelId": "CIPAO610",
+            "geoCode": {
+                "latitude": 37.4086,
+                "longitude": -122.12147
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "3945 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.52,
+                "unit": "KM"
+            },
+            "masterChainCode": "EC",
+            "lastUpdate": "2025-06-03T10:16:49"
+        },
+        {
+            "chainCode": "CP",
+            "iataCode": "PAO",
+            "dupeId": 700065743,
+            "name": "CROWNE PLAZA CABANA PALO ALTO",
+            "hotelId": "CPPAO075",
+            "geoCode": {
+                "latitude": 37.40676,
+                "longitude": -122.12063
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "4290 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.55,
+                "unit": "KM"
+            },
+            "masterChainCode": "6C",
+            "lastUpdate": "2026-03-15T19:34:34"
+        },
+        {
+            "chainCode": "YX",
+            "iataCode": "PAO",
+            "dupeId": 700102307,
+            "name": "AMERICAS BEST VALUE INN",
+            "hotelId": "YXPAO407",
+            "geoCode": {
+                "latitude": 37.40797,
+                "longitude": -122.12199
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "4234 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.6,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:19:00"
+        },
+        {
+            "chainCode": "GI",
+            "iataCode": "PAO",
+            "dupeId": 700224982,
+            "name": "HILTON GARDEN INN PALO ALTO",
+            "hotelId": "GIPAO455",
+            "geoCode": {
+                "latitude": 37.4095,
+                "longitude": -122.12327
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "4216 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.63,
+                "unit": "KM"
+            },
+            "masterChainCode": "EH",
+            "lastUpdate": "2025-06-03T10:21:33"
+        },
+        {
+            "chainCode": "LM",
+            "iataCode": "PAO",
+            "dupeId": 700070223,
+            "name": "THE ZEN HOTEL",
+            "hotelId": "LMPAO574",
+            "geoCode": {
+                "latitude": 37.41201,
+                "longitude": -122.12508
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "4164 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.68,
+                "unit": "KM"
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:20:31"
+        },
+        {
+            "chainCode": "HI",
+            "iataCode": "NUQ",
+            "dupeId": 700045659,
+            "name": "HOLIDAY INN EXP MOUNTAIN VIEW",
+            "hotelId": "HINUQ8CE",
+            "geoCode": {
+                "latitude": 37.38946,
+                "longitude": -122.09189
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "64040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "1561 WEST EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.71,
+                "unit": "KM"
+            },
+            "masterChainCode": "6C",
+            "lastUpdate": "2025-11-17T19:04:40"
+        },
+        {
+            "chainCode": "UZ",
+            "iataCode": "NUQ",
+            "dupeId": 700177081,
+            "name": "EXCUSTAY AT PARK PLACE APT.",
+            "hotelId": "UZNUQPP1",
+            "geoCode": {
+                "latitude": 37.38883,
+                "longitude": -122.08351
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94041",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "851 CHURCH STREET"
+                ]
+            },
+            "distance": {
+                "value": 3.74,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:18:08"
+        },
+        {
+            "chainCode": "UZ",
+            "iataCode": "PAO",
+            "dupeId": 501422434,
+            "name": "OAKWOOD AT PARKER PALO ALTO",
+            "hotelId": "UZPAOOPP",
+            "geoCode": {
+                "latitude": 37.44382,
+                "longitude": -122.1201
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94303",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "1094 TANLAND DRIVE"
+                ]
+            },
+            "distance": {
+                "value": 3.86,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-10-07T09:03:17"
+        },
+        {
+            "chainCode": "YX",
+            "iataCode": "NUQ",
+            "dupeId": 700081309,
+            "name": "AMERICAS BEST VALUE INN",
+            "hotelId": "YXNUQ344",
+            "geoCode": {
+                "latitude": 37.38726,
+                "longitude": -122.08596
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "1012 WEST EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 3.92,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:18:52"
+        },
+        {
+            "chainCode": "BW",
+            "iataCode": "SJC",
+            "dupeId": 700047982,
+            "name": "BW PLUS MOUNTAIN VIEW INN",
+            "hotelId": "BWSJC355",
+            "geoCode": {
+                "latitude": 37.38539,
+                "longitude": -122.0836
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "2300 EL CAMINO REAL WEST"
+                ]
+            },
+            "distance": {
+                "value": 4.13,
+                "unit": "KM"
+            },
+            "masterChainCode": "EW",
+            "lastUpdate": "2025-06-03T10:16:46"
+        },
+        {
+            "chainCode": "LE",
+            "iataCode": "PAO",
+            "dupeId": 700065705,
+            "name": "CREEKSIDE INN",
+            "hotelId": "LEPAO082",
+            "geoCode": {
+                "latitude": 37.41916,
+                "longitude": -122.13574
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "943062701",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "3400 EL CAMINO REAL",
+                    "NEAR PAGE MILL"
+                ]
+            },
+            "distance": {
+                "value": 4.44,
+                "unit": "KM"
+            },
+            "masterChainCode": "PV",
+            "lastUpdate": "2025-06-03T10:20:31"
+        },
+        {
+            "chainCode": "EA",
+            "iataCode": "NUQ",
+            "dupeId": 700107798,
+            "name": "EXTENDED STAY AMERICA MTN VIEW",
+            "hotelId": "EANUQMTV",
+            "geoCode": {
+                "latitude": 37.38219,
+                "longitude": -122.07684
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "190 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 4.55,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:16:14"
+        },
+        {
+            "chainCode": "TL",
+            "iataCode": "PAO",
+            "dupeId": 700113578,
+            "name": "TRAVELODGE PALO ALTO SILICON V",
+            "hotelId": "TLPAO029",
+            "geoCode": {
+                "latitude": 37.4209,
+                "longitude": -122.13788
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "3255 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 4.62,
+                "unit": "KM"
+            },
+            "masterChainCode": "WR",
+            "lastUpdate": "2025-06-03T10:17:57"
+        },
+        {
+            "chainCode": "YX",
+            "iataCode": "SJC",
+            "dupeId": 700067521,
+            "name": "HOTEL STRATA MTN VIEW",
+            "hotelId": "YXSJC72C",
+            "geoCode": {
+                "latitude": 37.38124,
+                "longitude": -122.07595
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "93 WEST EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 4.66,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:18:59"
+        },
+        {
+            "chainCode": "WV",
+            "iataCode": "NUQ",
+            "dupeId": 700109311,
+            "name": "HOTEL VUE MTN VIEW",
+            "hotelId": "WVNUQ528",
+            "geoCode": {
+                "latitude": 37.38145,
+                "longitude": -122.07416
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "64 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 4.67,
+                "unit": "KM"
+            },
+            "masterChainCode": "TC",
+            "lastUpdate": "2025-06-03T10:18:22"
+        },
+        {
+            "chainCode": "YX",
+            "iataCode": "PAO",
+            "dupeId": 700111957,
+            "name": "HOTEL PARMANI",
+            "hotelId": "YXPAO039",
+            "geoCode": {
+                "latitude": 37.42058,
+                "longitude": -122.13879
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94306",
+                "stateCode": "CA",
+                "cityName": "PALO ALTO",
+                "lines": [
+                    "3200 EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 4.7,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:19:00"
+        },
+        {
+            "chainCode": "YX",
+            "iataCode": "SJC",
+            "dupeId": 700113405,
+            "name": "HOTEL ZICO",
+            "hotelId": "YXSJC882",
+            "geoCode": {
+                "latitude": 37.37956,
+                "longitude": -122.0687
+            },
+            "address": {
+                "countryCode": "US",
+                "postalCode": "94040",
+                "stateCode": "CA",
+                "cityName": "MOUNTAIN VIEW",
+                "lines": [
+                    "200 E EL CAMINO REAL"
+                ]
+            },
+            "distance": {
+                "value": 5.0,
+                "unit": "KM"
+            },
+            "lastUpdate": "2025-06-03T10:18:59"
+        }
+    ],
+    "meta": {
+        "count": 25,
+        "links": {
+            "self": "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-geocode?hotelSource=ALL&latitude=37.4224858&longitude=-122.0855846&radius=5.0&radiusUnit=KM"
+        }
+    }
+}

@@ -83,12 +83,12 @@ def gecode_address(address):
 
     return latitude, longitude
 
-# @tool("get_hotels", return_direct=True)
+@tool("get_hotels")
 def get_hotels(address: str, radius: float) -> list[dict]:
-
+    """Get hotels near a given address within a specified radius."""
 
     latitude, longitude = gecode_address(address)
-
+    print(f"Called tool with address: {address} and radius: {radius}.")
     auth_response = requests.post(
         "https://test.api.amadeus.com/v1/security/oauth2/token",
         data={
@@ -114,7 +114,7 @@ def get_hotels(address: str, radius: float) -> list[dict]:
     parsed_data = parse_hotels(response.json())
     details = get_hotel_details(parsed_data, 2, "2026-05-05", "2026-05-07", 1)
     valid_ids = []
-    for index, hotel_data in enumerate(list(details["data"])):
+    for index, hotel_data in enumerate(list(details.get("data", []))):
         valid_ids.append((hotel_data["hotel"]["hotelId"], index))
     final_hotels = []
     for i in valid_ids:
@@ -123,11 +123,13 @@ def get_hotels(address: str, radius: float) -> list[dict]:
                 temp_object = item
                 temp_object.price = details["data"][i[1]]["offers"][0]["price"]["total"]
                 final_hotels.append(temp_object.to_json())
-    return final_hotels
+    return f"Here is a list of hotels within a {radius} km radius of {address}: \n{final_hotels}"
 
 
 def parse_hotels(hotels_data):
     list_of_hotels = []
+    with open("hotels_data.json", "w") as f:
+        json.dump(hotels_data, f, indent=4)
 
     for i in range(len(hotels_data["data"])):
         hotel_info = hotels_data["data"][i]
@@ -136,7 +138,7 @@ def parse_hotels(hotels_data):
         dupe_id=hotel_info['dupeId']
         chain_code=hotel_info["chainCode"]
         name=hotel_info['name']
-        address=f"{', '.join(hotel_info['address']['lines'])}, {hotel_info['address']['cityName']}, {hotel_info['address']['stateCode']}, {hotel_info['address']['countryCode']}, {hotel_info['address']['postalCode']}"
+        address=f"{', '.join(hotel_info['address']['lines'])}, {hotel_info['address']['cityName']}, {hotel_info['address']['stateCode']}, {hotel_info['address']['countryCode']}, {hotel_info['address'].get('postalCode', 'N/A')}"
         rating=None
         price=None
         latitude=hotel_info["geoCode"]["latitude"]
@@ -158,4 +160,21 @@ def parse_hotels(hotels_data):
         )
         list_of_hotels.append(hotel)
     return list_of_hotels
-print(get_hotels("1600 Amphitheatre Parkway, Mountain View, CA", 10))
+
+@tool("geocode_distance_calculator")
+def geocode_distance_calculator(address1: str, address2: str) -> float:
+    """Calculate the distance in kilometers between two addresses."""
+    
+    lat1, lon1 = gecode_address(address1)
+    lat2, lon2 = gecode_address(address2)
+
+    from math import radians, cos, sin, asin, sqrt
+
+    lat1, lon1, lat2, lon2 = map(radians, [float(lat1), float(lon1), float(lat2), float(lon2)])
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a))
+    r = 6371
+    print (f"Calculated distance between {address1} and {address2} is {c * r} km.")
+    return c * r
