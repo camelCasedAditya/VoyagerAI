@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from langchain_core.tools import tool
 
 def fill_airport_field(driver, wait, aria_label_fragment, airport_code):
     field = wait.until(EC.element_to_be_clickable(
@@ -21,7 +22,12 @@ def fill_airport_field(driver, wait, aria_label_fragment, airport_code):
     active.send_keys(Keys.RETURN)
     time.sleep(0.2)
 
-def scrape_flights_ui(origin, destination, departure_date, return_date):
+@tool("scrape_flights")
+def scrape_flights_ui(origin: str, destination: str, departure_date: str, return_date: str):
+    """Takes the parameters origin (e.g., "PDX"), destination (e.g., "JFK"), departure_date (e.g., "05/08/2026"), and return_date (e.g., "05/30/2026"). Scrapes flight information from Google Flights and returns a list of flights that match the search criteria."""
+
+    print(f"Called scrape_flights_ui with origin: {origin}, destination: {destination}, departure_date: {departure_date}, return_date: {return_date}")
+
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--headless=new")
@@ -79,10 +85,10 @@ def scrape_flights_ui(origin, destination, departure_date, return_date):
 
         time.sleep(0.5)
 
-        load_more_btn = driver.find_elements(By.XPATH, "//button[contains(@aria-label, 'View more flights')]")
-        load_more_btn[0].click()
+        # load_more_btn = driver.find_elements(By.XPATH, "//button[contains(@aria-label, 'View more flights')]")
+        # load_more_btn[0].click()
 
-        time.sleep(0.5)
+        # time.sleep(0.5)
 
         results = driver.find_elements(By.XPATH, "//ul[@aria-label]//li")
 
@@ -105,6 +111,6 @@ def scrape_flights_ui(origin, destination, departure_date, return_date):
                     print("-" * 60)
     finally:
         driver.quit()
-    return flights
+    return f"Here is a list of flights: {flights}"
 
-scrape_flights_ui("PDX", "JFK", "05/08/2026", "05/30/2026")
+# scrape_flights_ui("PDX", "JFK", "05/08/2026", "05/30/2026")

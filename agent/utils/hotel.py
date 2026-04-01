@@ -133,17 +133,28 @@ def parse_hotels(hotels_data):
 
     for i in range(len(hotels_data["data"])):
         hotel_info = hotels_data["data"][i]
-        hotel_id=hotel_info['hotelId']
-        iata_code=hotel_info['iataCode']
-        dupe_id=hotel_info['dupeId']
-        chain_code=hotel_info["chainCode"]
-        name=hotel_info['name']
-        address=f"{', '.join(hotel_info['address']['lines'])}, {hotel_info['address']['cityName']}, {hotel_info['address']['stateCode']}, {hotel_info['address']['countryCode']}, {hotel_info['address'].get('postalCode', 'N/A')}"
+        hotel_id = hotel_info.get("hotelId")
+        iata_code = hotel_info.get("iataCode")
+        dupe_id = hotel_info.get("dupeId")
+        chain_code = hotel_info.get("chainCode")
+        name = hotel_info.get("name", "N/A")
+
+        address_info = hotel_info.get("address", {})
+        lines = address_info.get("lines", [])
+        address_parts = []
+        if lines:
+            address_parts.append(", ".join(lines))
+        for key in ("cityName", "stateCode", "countryCode", "postalCode"):
+            value = address_info.get(key)
+            if value:
+                address_parts.append(value)
+        address = ", ".join(address_parts) if address_parts else "N/A"
         rating=None
         price=None
-        latitude=hotel_info["geoCode"]["latitude"]
-        longitude=hotel_info["geoCode"]["longitude"]
-        city=hotel_info["address"]["cityName"]
+        geo_code = hotel_info.get("geoCode", {})
+        latitude = geo_code.get("latitude")
+        longitude = geo_code.get("longitude")
+        city = address_info.get("cityName", "N/A")
 
         hotel = Hotel(
             hotel_id=hotel_id,
