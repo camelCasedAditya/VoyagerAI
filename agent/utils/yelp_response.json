@@ -1,0 +1,2290 @@
+{
+    "businesses": [
+        {
+            "id": "l69Z6OMNKxrwA69IubLS5g",
+            "alias": "okaeri-japanese-bistro-san-francisco-3",
+            "name": "Okaeri Japanese Bistro",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/ma2NK0wxbi6czTWiVbOKdg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/okaeri-japanese-bistro-san-francisco-3?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 496,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.758432,
+                "longitude": -122.419574
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "3515 20th St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94110",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "3515 20th St",
+                    "San Francisco, CA 94110"
+                ]
+            },
+            "phone": "+14156559588",
+            "display_phone": "(415) 655-9588",
+            "distance": 1829.9926902441339,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1400",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1400",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1400",
+                            "day": 6
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://okaerisf.com/san-francisco-okaeri-japanese-bistro-food-menu",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "YZrl7W2dewBb-T7e-BxAkQ",
+            "alias": "nara-san-francisco-5",
+            "name": "Nara",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Ymj8QXHedQGmBGNHwTnnsQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/nara-san-francisco-5?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 697,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4.4,
+            "coordinates": {
+                "latitude": 37.790889908718235,
+                "longitude": -122.42094463158011
+            },
+            "transactions": [
+                "pickup",
+                "delivery",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1515 Polk St",
+                "address2": "",
+                "address3": null,
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1515 Polk St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14155671515",
+            "display_phone": "(415) 567-1515",
+            "distance": 1783.1690658758866,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1400",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2230",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1400",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2230",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1400",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2230",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1400",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2230",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1400",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2330",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2330",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2230",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "http://Narasushi1515.menu11.com",
+                "open24_hours": false,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "5HA7OuFkkN76mBiJmI-MoA",
+            "alias": "eat-sushi-san-francisco-5",
+            "name": "Eat Sushi",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/u1MZd8QHANbBdfKaBcmV3A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/eat-sushi-san-francisco-5?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 314,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.771858,
+                "longitude": -122.4145603
+            },
+            "transactions": [
+                "pickup",
+                "delivery",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1516 Folsom St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1516 Folsom St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14153551288",
+            "display_phone": "(415) 355-1288",
+            "distance": 543.470165984645,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2130",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1030",
+                            "end": "1400",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1030",
+                            "end": "1400",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1030",
+                            "end": "1400",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1030",
+                            "end": "1400",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1030",
+                            "end": "1400",
+                            "day": 6
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://eatsushirestaurant.com/menu",
+                "open24_hours": null,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "PoFvHQnaktxW15e-uMDAdA",
+            "alias": "hakashi-japanese-sushi-bar-and-grill-san-francisco-2",
+            "name": "Hakashi Japanese Sushi Bar & Grill",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/LYJ8iKipqE68vfjRf2BUZw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hakashi-japanese-sushi-bar-and-grill-san-francisco-2?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 651,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4.3,
+            "coordinates": {
+                "latitude": 37.78142,
+                "longitude": -122.39635
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "474 3rd St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94107",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "474 3rd St",
+                    "San Francisco, CA 94107"
+                ]
+            },
+            "phone": "+14158729589",
+            "display_phone": "(415) 872-9589",
+            "distance": 2154.7647739338117,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1430",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1430",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1430",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1430",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1430",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2300",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1430",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2300",
+                            "day": 5
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://www.hakashisushi.com/our-menu",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "xeRy4mjZWczet5V9Jtmx1g",
+            "alias": "domo-san-francisco",
+            "name": "Domo",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/SxHv1we1dFfzaEIy1bxBaw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/domo-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 1036,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 37.7758604,
+                "longitude": -122.4263131
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "511 Laguna St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94102",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "511 Laguna St",
+                    "San Francisco, CA 94102"
+                ]
+            },
+            "phone": "+14158618887",
+            "display_phone": "(415) 861-8887",
+            "distance": 616.9089663781223,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1430",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1430",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1430",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "http://www.domosf.com/menu.htm",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "mydKjdG8gJOcRQ9cZwkQpQ",
+            "alias": "ryokos-san-francisco",
+            "name": "Ryoko's",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/w3i_dVIjGTyIeiYXUzumkA/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ryokos-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 3500,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 3.9,
+            "coordinates": {
+                "latitude": 37.7881987776243,
+                "longitude": -122.412059158087
+            },
+            "transactions": [
+                "delivery",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "619 Taylor St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94102",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "619 Taylor St",
+                    "San Francisco, CA 94102"
+                ]
+            },
+            "phone": "+14157751028",
+            "display_phone": "(415) 775-1028",
+            "distance": 1613.3556228352093,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1800",
+                            "end": "2330",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1800",
+                            "end": "2330",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1800",
+                            "end": "2330",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1800",
+                            "end": "2330",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": true,
+                            "start": "1800",
+                            "end": "0030",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": true,
+                            "start": "1800",
+                            "end": "0030",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1800",
+                            "end": "2230",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://ryokos.com/dinner-menu",
+                "open24_hours": null,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "9adGsRBQkVSqq4digmh6sw",
+            "alias": "ganji-san-francisco",
+            "name": "Ganji",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/dF6u3xt-IBCvjG2KY8W43A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ganji-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 579,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4.6,
+            "coordinates": {
+                "latitude": 37.786192,
+                "longitude": -122.429731
+            },
+            "transactions": [
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1740 Buchanan St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94115",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1740 Buchanan St",
+                    "San Francisco, CA 94115"
+                ]
+            },
+            "phone": "+14154130717",
+            "display_phone": "(415) 413-0717",
+            "distance": 1549.232379807211,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2000",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2000",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2000",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2000",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2000",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://ganjisf.menu11.com/sanfrancisco/order",
+                "open24_hours": null,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "ZGAjGYDFBJV1Z0JO2fanKA",
+            "alias": "rocket-sushi-san-francisco-2",
+            "name": "Rocket Sushi",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/rpDSk5oEbhGzV7kt7roGOg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/rocket-sushi-san-francisco-2?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 407,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "ramen",
+                    "title": "Ramen"
+                },
+                {
+                    "alias": "conveyorsushi",
+                    "title": "Conveyor Belt Sushi"
+                }
+            ],
+            "rating": 4.5,
+            "coordinates": {
+                "latitude": 37.77255,
+                "longitude": -122.42193
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1695 Market St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1695 Market St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14158729368",
+            "display_phone": "(415) 872-9368",
+            "distance": 344.47695842051684,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1500",
+                            "day": 6
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2045",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": null,
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "izfOOzJrZVlN7CTbnsatpA",
+            "alias": "ebiko-san-francisco-2",
+            "name": "Ebiko",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/BvQ-Ft3E622YmqW-pNT0dg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/ebiko-san-francisco-2?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 117,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "intlgrocery",
+                    "title": "International Grocery"
+                }
+            ],
+            "rating": 4.6,
+            "coordinates": {
+                "latitude": 37.78939514911368,
+                "longitude": -122.39782587499876
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "100 1st St",
+                "address2": "Ste 160",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94105",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "100 1st St",
+                    "Ste 160",
+                    "San Francisco, CA 94105"
+                ]
+            },
+            "phone": "+14159303437",
+            "display_phone": "(415) 930-3437",
+            "distance": 2488.4957298351314,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 4
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": null,
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "TyGQGbz1H5ehDZdOId27Ug",
+            "alias": "wabi-sabi-sf-at-soma-san-francisco",
+            "name": "Wabi-Sabi SF At Soma",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/s5_rusbt36I0QzPGKwXgHg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/wabi-sabi-sf-at-soma-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 291,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.7,
+            "coordinates": {
+                "latitude": 37.78022,
+                "longitude": -122.39582
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "246 Ritch St",
+                "address2": "Unit 101",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94107",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "246 Ritch St",
+                    "Unit 101",
+                    "San Francisco, CA 94107"
+                ]
+            },
+            "phone": "+14154004172",
+            "display_phone": "(415) 400-4172",
+            "distance": 2156.304238852869,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1430",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1430",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1430",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1430",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1430",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1600",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "1600",
+                            "day": 6
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": null,
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "WtA7XYzBFhZ5LPbSihEWkw",
+            "alias": "akira-japanese-restaurant-san-francisco",
+            "name": "Akira Japanese Restaurant",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/v5nbS8CB65jTgEO2fhwH1g/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/akira-japanese-restaurant-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 554,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.3,
+            "coordinates": {
+                "latitude": 37.78846,
+                "longitude": -122.42421
+            },
+            "transactions": [
+                "pickup",
+                "delivery",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1634 Bush St",
+                "address2": "",
+                "address3": null,
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1634 Bush St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14158008498",
+            "display_phone": "(415) 800-8498",
+            "distance": 1559.3837542270983,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://akirasf.com/menu/",
+                "open24_hours": null,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "cjfJOMF6hpE7bX0ESWdAEg",
+            "alias": "sanraku-san-francisco-2",
+            "name": "Sanraku",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/yo8sm_wnaFXe4kT6LBwUag/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/sanraku-san-francisco-2?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 2029,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "asianfusion",
+                    "title": "Asian Fusion"
+                }
+            ],
+            "rating": 3.9,
+            "coordinates": {
+                "latitude": 37.788933,
+                "longitude": -122.41219
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "704 Sutter St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "704 Sutter St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14157710803",
+            "display_phone": "(415) 771-0803",
+            "distance": 1679.962047900658,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://cdn.prod.website-files.com/673615333a9f39ede0a79bbb/67992d9caaf7c5e17a5fe0d4_combinepdf%20(1).pdf",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "eQtJR9FsTl6v-EnzVeHDcg",
+            "alias": "elephant-sushi-san-francisco-7",
+            "name": "Elephant Sushi",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/c4_ugBrA4NQb6yOK8Wce7A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/elephant-sushi-san-francisco-7?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 322,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "seafood",
+                    "title": "Seafood"
+                }
+            ],
+            "rating": 4.3,
+            "coordinates": {
+                "latitude": 37.786329,
+                "longitude": -122.415002
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "705 Geary St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94109",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "705 Geary St",
+                    "San Francisco, CA 94109"
+                ]
+            },
+            "phone": "+14153747186",
+            "display_phone": "(415) 374-7186",
+            "distance": 1334.9469260604208,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": null,
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "UUWJMsu_h_gocMSnOoeSgQ",
+            "alias": "bubu-san-francisco",
+            "name": "Bubu",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/vsjtfCS73PAiEQNsbkRg-w/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/bubu-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 305,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.2,
+            "coordinates": {
+                "latitude": 37.7862477,
+                "longitude": -122.4331341
+            },
+            "transactions": [],
+            "price": "$$",
+            "location": {
+                "address1": "1800 Fillmore St",
+                "address2": null,
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94115",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1800 Fillmore St",
+                    "San Francisco, CA 94115"
+                ]
+            },
+            "phone": "+14157963376",
+            "display_phone": "(415) 796-3376",
+            "distance": 1746.1465302637562,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2200",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2200",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2200",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2200",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2200",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "zj09K037XrZ_51Yh5qsIAw",
+            "alias": "kui-shin-bo-san-francisco-2",
+            "name": "Kui Shin Bo",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Tk90nxYDH5tW0c2G0Tq88A/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/kui-shin-bo-san-francisco-2?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 1052,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 3.8,
+            "coordinates": {
+                "latitude": 37.785367,
+                "longitude": -122.429465
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "22 Peace Plz",
+                "address2": "Fl 2",
+                "address3": null,
+                "city": "San Francisco",
+                "zip_code": "94115",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "22 Peace Plz",
+                    "Fl 2",
+                    "San Francisco, CA 94115"
+                ]
+            },
+            "phone": "+14159229575",
+            "display_phone": "(415) 922-9575",
+            "distance": 1461.8665736837947,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "https://www.kuishinborestaurant.com/menu/",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "Wsf3kSGsWAc5SkvM41A2eA",
+            "alias": "umi-san-francisco",
+            "name": "Umi",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/biVzgP3P3BxCicQMADI4Ow/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/umi-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 662,
+            "categories": [
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 37.7627274,
+                "longitude": -122.3961661
+            },
+            "transactions": [
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1328 18th St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94107",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1328 18th St",
+                    "San Francisco, CA 94107"
+                ]
+            },
+            "phone": "+14153551328",
+            "display_phone": "(415) 355-1328",
+            "distance": 2451.103386336264,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1730",
+                            "end": "2130",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1730",
+                            "end": "2130",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1730",
+                            "end": "2130",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1730",
+                            "end": "2200",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "http://umisf.com/menu",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "QWZO1RdLbG5h0RGDiItoAA",
+            "alias": "zaoh-restaurant-san-francisco",
+            "name": "Zaoh Restaurant",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/UV2qH0huqkg4uAo_D5K6Ag/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/zaoh-restaurant-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 418,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                }
+            ],
+            "rating": 4.0,
+            "coordinates": {
+                "latitude": 37.773279,
+                "longitude": -122.417995
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1555 Mission St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1555 Mission St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14154313930",
+            "display_phone": "(415) 431-3930",
+            "distance": 218.18827403330621,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1100",
+                            "end": "1500",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2200",
+                            "day": 5
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": null,
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "r2jiJk3yivcLkWSSYELGcA",
+            "alias": "tataki-san-francisco",
+            "name": "Tataki",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/jz1YmSB_DGqAWoRlXxqaow/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/tataki-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 1542,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 4.1,
+            "coordinates": {
+                "latitude": 37.7878390504557,
+                "longitude": -122.441227674274
+            },
+            "transactions": [
+                "pickup",
+                "delivery",
+                "restaurant_reservation"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2827 California St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94115",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2827 California St",
+                    "San Francisco, CA 94115"
+                ]
+            },
+            "phone": "+14159311182",
+            "display_phone": "(415) 931-1182",
+            "distance": 2397.883301695949,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2030",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2030",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2030",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2030",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2100",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2130",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1630",
+                            "end": "2030",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "",
+                "open24_hours": null,
+                "waitlist_reservation": true
+            }
+        },
+        {
+            "id": "j_YtZXamd5GHfL-BhfkiLQ",
+            "alias": "live-sushi-bar-san-francisco",
+            "name": "Live Sushi Bar",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/33CSps__RIKiIfNZrqLZxg/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/live-sushi-bar-san-francisco?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 1425,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "japanese",
+                    "title": "Japanese"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "rating": 3.9,
+            "coordinates": {
+                "latitude": 37.764681,
+                "longitude": -122.4036308
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "2001 17th St",
+                "address2": "",
+                "address3": "",
+                "city": "San Francisco",
+                "zip_code": "94103",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "2001 17th St",
+                    "San Francisco, CA 94103"
+                ]
+            },
+            "phone": "+14158618610",
+            "display_phone": "(415) 861-8610",
+            "distance": 1792.3047984841046,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2100",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "1400",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1700",
+                            "end": "2130",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2130",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1200",
+                            "end": "2100",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        },
+        {
+            "id": "PnehZ8Y2Bec33xO8DCv4wA",
+            "alias": "hikari-sushi-and-bar-san-francisco-3",
+            "name": "Hikari Sushi & Bar",
+            "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/-PUe6UggVdnQhB_LUoKPAQ/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/hikari-sushi-and-bar-san-francisco-3?adjust_creative=5QZdUK-2jTMLdTPZZlc4IQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=5QZdUK-2jTMLdTPZZlc4IQ",
+            "review_count": 551,
+            "categories": [
+                {
+                    "alias": "sushi",
+                    "title": "Sushi Bars"
+                },
+                {
+                    "alias": "conveyorsushi",
+                    "title": "Conveyor Belt Sushi"
+                }
+            ],
+            "rating": 3.9,
+            "coordinates": {
+                "latitude": 37.785603987802766,
+                "longitude": -122.43048806235991
+            },
+            "transactions": [
+                "pickup",
+                "delivery"
+            ],
+            "price": "$$",
+            "location": {
+                "address1": "1734 Post St",
+                "address2": "",
+                "address3": null,
+                "city": "San Francisco",
+                "zip_code": "94115",
+                "country": "US",
+                "state": "CA",
+                "display_address": [
+                    "1734 Post St",
+                    "San Francisco, CA 94115"
+                ]
+            },
+            "phone": "+14158729116",
+            "display_phone": "(415) 872-9116",
+            "distance": 1538.2568795748502,
+            "business_hours": [
+                {
+                    "open": [
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 0
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 1
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 2
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 3
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 4
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2100",
+                            "day": 5
+                        },
+                        {
+                            "is_overnight": false,
+                            "start": "1130",
+                            "end": "2030",
+                            "day": 6
+                        }
+                    ],
+                    "hours_type": "REGULAR",
+                    "is_open_now": false
+                }
+            ],
+            "attributes": {
+                "business_temp_closed": null,
+                "menu_url": "",
+                "open24_hours": null,
+                "waitlist_reservation": null
+            }
+        }
+    ],
+    "total": 535,
+    "region": {
+        "center": {
+            "longitude": -122.4194,
+            "latitude": 37.7749
+        }
+    }
+}
