@@ -1,0 +1,10 @@
+{
+    "errors": [
+        {
+            "code": 38189,
+            "title": "Internal error",
+            "detail": "An internal error occurred, please contact your administrator",
+            "status": 500
+        }
+    ]
+}
