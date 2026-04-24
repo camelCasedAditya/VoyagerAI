@@ -1,21 +1,34 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from langchain.agents import create_agent
+from langchain.agents.middleware import ToolRetryMiddleware, ModelRetryMiddleware
 from langchain_cerebras import ChatCerebras
-from .utils.hotels import get_hotels, geocode_distance_calculator
-from .utils.food import search_yelp
-from .utils.flights import scrape_flights_ui
+# from .utils.hotels import get_hotels, geocode_distance_calculator
+# from .utils.food import search_yelp
+# from .utils.flights import scrape_flights_ui
 import time
+from celery import shared_task
+from .models import Trip
+from swarm import celery_app
 
-def plan_trip(prompt):
+
+@shared_task
+def plan_trip(prompt, trip_id):
+    trip = Trip.objects.get(id=trip_id)
     api_key = os.getenv("CEREBRAS_API_KEY", "csk-t5cdem3w8w4hepvkderrd8jjf6893nnh9efmhhv8yv3fwdjd")
     model_name = os.getenv("CEREBRAS_MODEL", "qwen-3-235b-a22b-instruct-2507")
 
     llm = ChatCerebras(model=model_name, api_key=api_key)
 
+    retry_middleware = ToolRetryMiddleware(max_retries=8, tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui], backoff_factor=2, initial_delay=1, max_delay=30)
+    model_retry_middleware = ModelRetryMiddleware(max_retries=8, backoff_factor=2, initial_delay=1, max_delay=30)
+
     agent = create_agent(
         llm, 
         tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui],
+        middleware=[retry_middleware, model_retry_middleware],
         system_prompt="""
             You are a expert travel agent that helps customers find the best hotels, restaurants, and flights for their trips.
 
@@ -32,34 +45,19 @@ def plan_trip(prompt):
         )
 
     #x = """You are a helpful travel agent that finds hotels for customers. Use the get_hotels function to find hotels based on the customer's query. Use the geocode_distance_calculator function to calculate distances between the hotels and the customer's desired location. Pick the top three hotels for the customer based on pricing, location, and reputation. Then use the search_yelp tool to find restaurants near the hotels for the customer. Provide the customer with a list of the top three hotels and nearby restaurants based on their query. Always use the tools provided to you to find the best hotels and restaurants for the customer. If you don't have enough information to answer the customer's query, ask them for more information."""
-    for i in range(5):
-        try:
-            response = agent.invoke(
+    
+    response = agent.invoke(
+        {
+            "messages": [
                 {
-                    "messages": [
-                        {
-                            "role": "user",
-                            "content": prompt
-                        }
-                    ]
+                    "role": "user",
+                    "content": prompt
                 }
-            )
-            break
-        except Exception as e:
-            print(f"Error invoking agent: {e}")
-            if i == 4:
-                return "Sorry, there was an error processing your request. Please try again later."
-            else:
-                print("Retrying...")
-                time.sleep(1)
-        # response = agent.invoke(
-        #     {
-        #         "messages": [
-        #             {
-        #                 "role": "user",
-        #                 "content": prompt
-        #             }
-        #         ]
-        #     }
-        # )
+            ]
+        }
+    )
+
+    trip.result = response["messages"][-1].content
+    trip.save(update_fields=['result'])
+
     return response["messages"][-1].content
