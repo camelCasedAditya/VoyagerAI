@@ -84,11 +84,11 @@ def gecode_address(address):
     return latitude, longitude
 
 @tool("get_hotels")
-def get_hotels(address: str, radius: float) -> list[dict]:
-    """Get hotels near a given address within a specified radius."""
+def get_hotels(address: str) -> list[dict]:
+    """Get hotels near a given address."""
 
     latitude, longitude = gecode_address(address)
-    print(f"Called tool with address: {address} and radius: {radius}.")
+    print(f"Called tool with address: {address}.")
     auth_response = requests.post(
         "https://test.api.amadeus.com/v1/security/oauth2/token",
         data={
@@ -105,14 +105,16 @@ def get_hotels(address: str, radius: float) -> list[dict]:
         params={
             "latitude": latitude,
             "longitude": longitude,
-            "radius": radius,
+            "radius": 10,
             "radiusUnit": "KM",
             "hotelSource": "ALL"
         }
     )
+    print(f"Response status code: {response.status_code}")
+    print(f"Response content: {response.text}")
     ids = []
     parsed_data = parse_hotels(response.json())
-    details = get_hotel_details(parsed_data, 2, "2026-05-05", "2026-05-07", 1)
+    details = get_hotel_details(parsed_data, 2, "2026-07-05", "2026-07-07", 1)
     valid_ids = []
     for index, hotel_data in enumerate(list(details.get("data", []))):
         valid_ids.append((hotel_data["hotel"]["hotelId"], index))
@@ -123,7 +125,8 @@ def get_hotels(address: str, radius: float) -> list[dict]:
                 temp_object = item
                 temp_object.price = details["data"][i[1]]["offers"][0]["price"]["total"]
                 final_hotels.append(temp_object.to_json())
-    return f"Here is a list of hotels within a {radius} km radius of {address}: \n{final_hotels}"
+    print(f"Found hotels: {final_hotels}")
+    return f"Here is a list of hotels within a 10 km radius of {address}: \n{final_hotels}"
 
 
 def parse_hotels(hotels_data):
@@ -189,3 +192,106 @@ def geocode_distance_calculator(address1: str, address2: str) -> float:
     r = 6371
     print (f"Calculated distance between {address1} and {address2} is {c * r} km.")
     return c * r
+
+import serpapi
+
+@tool("find_hotels")
+def find_hotels(address: str, check_in_date: str, check_out_date: str):
+    """API TO SEARCH GOOGLE HOTELS AND TAKES IN ADDRESS PARAMERER AND HOTEL DATES"""
+    print(f"Called tool with address: {address}, check-in date: {check_in_date}, and check-out date: {check_out_date}.")
+    client = serpapi.Client(api_key="f7c67ca2d23762c1a7523de8d8792402ee1516b02cbd8eb525c9324fc7023c96")
+    results = client.search({
+    "engine": "google_hotels",
+    "q": "Hotels with 5 miles of " + address,
+    "check_in_date": check_in_date,
+    "check_out_date": check_out_date,
+    "hotel_class": "4,5"
+    })
+    properties = results["properties"]
+    properties = properties[:5]
+    properties = extract_essential_hotel_data(properties)
+    properties = ultra_compress_hotel_data(properties)
+    print(f"Found hotels: {properties}")
+    return f"Here are some hotels near {address} from {check_in_date} to {check_out_date}: \n{properties}"
+
+
+# Bottom two function written by AI to parse JSON due to tedious nature.
+import json
+
+def extract_essential_hotel_data(original_data):
+    """
+    Transforms the detailed hotel JSON payload into the essential schema format.
+    """
+
+    print("Extracting essential hotel data from original payload.")
+    essential_data = []
+    
+    for hotel in original_data:
+        # Safely extract rate_per_night data
+        rate_info = hotel.get("rate_per_night", {})
+        essential_rate = {
+            "lowest": rate_info.get("lowest"),
+            "extracted_lowest": rate_info.get("extracted_lowest")
+        }
+        
+        # Safely extract image data
+        essential_images = [
+            {
+                "thumbnail": img.get("thumbnail"),
+                "original_image": img.get("original_image")
+            }
+            for img in hotel.get("images", [])
+        ]
+        
+        # Build the simplified hotel object
+        essential_hotel = {
+            "name": hotel.get("name"),
+            "description": hotel.get("description"),
+            "link": hotel.get("link"),
+            "gps_coordinates": hotel.get("gps_coordinates"),
+            "rate_per_night": essential_rate,
+            "overall_rating": hotel.get("overall_rating"),
+            "reviews": hotel.get("reviews"),
+            "images": essential_images,
+            "amenities": hotel.get("amenities", [])
+        }
+        
+        # Remove keys with None values to keep the output clean
+        essential_hotel = {k: v for k, v in essential_hotel.items() if v is not None}
+        
+        essential_data.append(essential_hotel)
+        
+    return essential_data
+
+def ultra_compress_hotel_data(hotel_list):
+    """
+    Compresses hotel data by flattening nested objects, taking only the 
+    first image, and minifying keys to single characters.
+    """
+    compressed_data = []
+    
+    for hotel in hotel_list:
+        # Extract the flat integer price safely
+        price = None
+        if "rate_per_night" in hotel:
+            price = hotel["rate_per_night"].get("extracted_lowest")
+            
+        # Extract just the very first thumbnail URL to save space
+        thumbnail = None
+        if hotel.get("images") and len(hotel["images"]) > 0:
+            thumbnail = hotel["images"][0].get("thumbnail")
+
+        # Build the micro object
+        micro_hotel = {
+            "n": hotel.get("name"),
+            "p": price,
+            "r": hotel.get("overall_rating"),
+            "l": hotel.get("link"),
+            "t": thumbnail
+        }
+        
+        # Drop any null values to save even more bytes
+        micro_hotel = {k: v for k, v in micro_hotel.items() if v is not None}
+        compressed_data.append(micro_hotel)
+        
+    return compressed_data

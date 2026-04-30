@@ -21,7 +21,8 @@ def delay_print():
 from langchain.agents import create_agent
 from langchain.agents.middleware import ToolRetryMiddleware, ModelRetryMiddleware
 from langchain_cerebras import ChatCerebras
-from .utils.hotels import get_hotels, geocode_distance_calculator
+from langchain_groq import ChatGroq
+from .utils.hotels import get_hotels, geocode_distance_calculator, find_hotels
 from .utils.food import search_yelp
 from .utils.flights import scrape_flights_ui
 from celery import shared_task
@@ -42,17 +43,20 @@ def send_update(text):
 @celery_app.task()
 def plan_trip(prompt, trip_id):
     trip = Trip.objects.get(id=trip_id)
-    api_key = os.getenv("CEREBRAS_API_KEY", "csk-t5cdem3w8w4hepvkderrd8jjf6893nnh9efmhhv8yv3fwdjd")
-    model_name = os.getenv("CEREBRAS_MODEL", "qwen-3-235b-a22b-instruct-2507")
+    # api_key = os.getenv("CEREBRAS_API_KEY", "csk-t5cdem3w8w4hepvkderrd8jjf6893nnh9efmhhv8yv3fwdjd")
+    # model_name = os.getenv("CEREBRAS_MODEL", "qwen-3-235b-a22b-instruct-2507")
+    api_key = os.getenv("GROQ_API_KEY", "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")
+    model_name = "openai/gpt-oss-120b"
 
-    llm = ChatCerebras(model=model_name, api_key=api_key)
+    llm = ChatGroq(model=model_name, api_key=api_key)
 
     retry_middleware = ToolRetryMiddleware(max_retries=8, tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui], backoff_factor=2, initial_delay=1, max_delay=30)
     model_retry_middleware = ModelRetryMiddleware(max_retries=8, backoff_factor=2, initial_delay=1, max_delay=30)
 
     agent = create_agent(
         llm, 
-        tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui, send_update],
+        # tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui, send_update],
+        tools=[find_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui],
         middleware=[retry_middleware, model_retry_middleware],
         system_prompt="""
             You are a expert travel agent that helps customers find the best hotels, restaurants, and flights for their trips.
@@ -68,6 +72,10 @@ def plan_trip(prompt, trip_id):
             WHEN RETURNING THE COMPREHENSIVE PLAN, ALWAYS INCLUDE THE FLIGHTS, HOTEL STAYS, AND RESTAURANT OR FOOD LOCATIONS FOR THREE MEALS A DAY. ALWAYS USE THE TOOLS PROVIDED TO YOU TO FIND THE BEST HOTELS, RESTAURANTS, AND FLIGHTS FOR THE CUSTOMER. IF YOU DON'T HAVE ENOUGH INFORMATION TO ANSWER THE CUSTOMER'S QUERY, ASK THEM FOR MORE INFORMATION. PROVIDE PRICING AND TIMING INFORMATION FOR THE FLIGHTS, HOTEL STAYS, AND RESTAURANT OR FOOD LOCATIONS. MAKE SURE TO CONSIDER THE DISTANCE BETWEEN THE HOTEL AND THE RESTAURANTS OR FOOD LOCATIONS WHEN MAKING YOUR RECOMMENDATIONS.
 
             SEND FREQUENT UPDATES TO THE FRONTEND USING THE send_update TOOL TO LET THE CUSTOMER KNOW HOW THE PLANNING IS GOING AND WHAT STEPS YOU ARE TAKING TO PLAN THEIR TRIP.
+
+            RETURN INFORMATION IN MARKDOWN FORMAT SO THAT IT CAN BE PROPERLY RENDERED ON THE FRONTEND.
+
+            DO NOT ASK ANY QUESTIONS. JUST WRITE THE TRAVEL ITINERARY WITH YOUR OWN BEST DECISION MAKING BASED ON THE TOOLS AND INFORMATION YOU HAVE. IF YOU DON'T HAVE ENOUGH INFORMATION TO MAKE A ITINERARY, THEN MAKE THE BEST ITINERARY YOU CAN WITH THE INFORMATION YOU HAVE. ALWAYS USE THE TOOLS TO GET THE MOST UP TO DATE INFORMATION TO MAKE YOUR ITINERARY.
             """
         )
 
