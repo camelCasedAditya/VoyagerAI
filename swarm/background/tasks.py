@@ -43,7 +43,7 @@ def send_update(text):
 @celery_app.task()
 def plan_trip(prompt, trip_id):
     trip = Trip.objects.get(id=trip_id)
-    # api_key = os.getenv("CEREBRAS_API_KEY", "csk-t5cdem3w8w4hepvkderrd8jjf6893nnh9efmhhv8yv3fwdjd")
+    # api_key = os.getenv("CEREBRAS_API_KEY", "")
     # model_name = os.getenv("CEREBRAS_MODEL", "")
     api_key = os.getenv("GROQ_API_KEY", "")
     model_name = "openai/gpt-oss-120b"
