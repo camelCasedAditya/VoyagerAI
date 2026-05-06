@@ -1,7 +1,3 @@
-import os
-import json
-import time
-from cerebras.cloud.sdk import Cerebras
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -11,13 +7,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-def google_maps_food_search(address):
-
-    text = (f"food near {address}").replace(" ", "+")
+def hotel_scraper(address):
+    text = (f"Hotels near {address}").replace(" ", "+")
 
     url = f"https://www.google.com/maps/search/{text}/"
 
-    query = f"food near {address}"
 
     options = webdriver.ChromeOptions()
     options.add_argument("--window-size=1920,1080")
@@ -30,10 +24,13 @@ def google_maps_food_search(address):
 
     driver.get(url)
 
-    food = WebDriverWait(driver, 20).until(
+    
+
+    hotels = WebDriverWait(driver, 20).until(
         EC.presence_of_all_elements_located((By.XPATH, "//div[@role='article']"))
     )
-    for i in food:
+    print(hotels)
+    for i in hotels:
         print(i.text)
         print("------------------------")
-google_maps_food_search("cedar mill oregon")
+hotel_scraper("cedar mill oregon")
