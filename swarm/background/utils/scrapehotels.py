@@ -6,8 +6,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from langchain_core.tools import tool
+from token_count import TokenCount
 
-def hotel_scraper(address):
+@tool("find_hotels")
+def find_hotels(address: str) -> str:
+    """Get hotels near a given address."""
     text = (f"Hotels near {address}").replace(" ", "+")
 
     url = f"https://www.google.com/maps/search/{text}/"
@@ -29,8 +33,12 @@ def hotel_scraper(address):
     hotels = WebDriverWait(driver, 20).until(
         EC.presence_of_all_elements_located((By.XPATH, "//div[@role='article']"))
     )
-    print(hotels)
+    hotel_list = []
     for i in hotels:
-        print(i.text)
-        print("------------------------")
-hotel_scraper("cedar mill oregon")
+        hotel_list.append(i.text)
+    print(f"Found {len(hotel_list)} hotels near {address}")
+    tc = TokenCount("gpt-3.5-turbo")
+    tokens = tc.num_tokens_from_string("\n\n".join(hotel_list))
+    print(f"Token count for hotels: {tokens}")
+    return "\n\n".join(hotel_list)
+# find_hotels("cedar mill oregon")

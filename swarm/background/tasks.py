@@ -22,8 +22,10 @@ from langchain.agents import create_agent
 from langchain.agents.middleware import ToolRetryMiddleware, ModelRetryMiddleware
 from langchain_cerebras import ChatCerebras
 from langchain_groq import ChatGroq
-from .utils.hotels import get_hotels, geocode_distance_calculator, find_hotels
-from .utils.food import search_yelp
+from .utils.hotels import geocode_distance_calculator
+from .utils.scrapehotels import find_hotels
+from .utils.scrapefood import find_food_places
+# from .utils.food import search_yelp
 from .utils.flights import scrape_flights_ui
 from celery import shared_task
 from travel.models import Trip
@@ -50,13 +52,13 @@ def plan_trip(prompt, trip_id):
 
     llm = ChatGroq(model=model_name, api_key=api_key)
 
-    retry_middleware = ToolRetryMiddleware(max_retries=8, tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui], backoff_factor=2, initial_delay=1, max_delay=30)
+    retry_middleware = ToolRetryMiddleware(max_retries=8, tools=[find_hotels, find_food_places, geocode_distance_calculator, scrape_flights_ui], backoff_factor=2, initial_delay=1, max_delay=30)
     model_retry_middleware = ModelRetryMiddleware(max_retries=8, backoff_factor=2, initial_delay=1, max_delay=30)
 
     agent = create_agent(
         llm, 
         # tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui, send_update],
-        tools=[find_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui],
+        tools=[find_hotels, find_food_places, geocode_distance_calculator, scrape_flights_ui],
         middleware=[retry_middleware, model_retry_middleware],
         system_prompt="""
             You are a expert travel agent that helps customers find the best hotels, restaurants, and flights for their trips.

@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from langchain_core.tools import tool
+from token_count import TokenCount
 
 def fill_airport_field(driver, wait, aria_label_fragment, airport_code):
     field = wait.until(EC.element_to_be_clickable(
@@ -99,6 +100,7 @@ def scrape_flights_ui(origin: str, destination: str, departure_date: str, return
         if not flights:
             flights = driver.find_elements(By.XPATH, "//li[.//span[contains(text(),'$')]]")
 
+        flight_texts = []
         if not flights:
             print("Could not find structured results. Raw page sample:")
             body_text = driver.find_element(By.TAG_NAME, "body").text
@@ -107,8 +109,12 @@ def scrape_flights_ui(origin: str, destination: str, departure_date: str, return
             for flight in flights:
                 text = flight.text.strip().replace('\n', ' | ')
                 if text:
+                    flight_texts.append(text)
                     print(text)
                     print("-" * 60)
     finally:
         driver.quit()
-    return f"Here is a list of flights: {flights}"
+    tc = TokenCount("gpt-3.5-turbo")
+    tokens = tc.num_tokens_from_string("\n\n".join(flight_texts))
+    print(f"Token count for flight results: {tokens}")
+    return f"Here is a list of flights: {flight_texts[:20]}"
