@@ -1,0 +1,1 @@
+I want to take a trip from Portland to New York from June 25th to June 30th.
