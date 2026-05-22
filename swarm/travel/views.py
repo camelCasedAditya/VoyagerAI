@@ -27,20 +27,10 @@ def trip_detail(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
     # markdowner = markdown2.Markdown()
     # trip.result = markdowner.convert(md(trip.result))
-    return HttpResponse(f"""
-                        <p>
-                            <strong>
-                                Query:
-                            </strong> 
-                            {trip.query}
-                        </p>
-                        <p>
-                            <strong>
-                                Result:
-                            </strong> 
-                            {mistune.html(trip.result)}
-                        </p>
-                        """)
+    return render(request, 'travel/trip_detail.html', {
+        'trip': trip,
+        'result_html': mistune.html(trip.result)
+    })
 
 def print_api_post(request):
     if request.method == 'POST':
