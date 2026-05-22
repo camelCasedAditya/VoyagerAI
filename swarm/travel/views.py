@@ -2,7 +2,10 @@ from django.shortcuts import render, redirect
 from .forms import AgentForm
 from background.tasks import plan_trip
 from .models import Trip
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+import markdown2
+from markdownify import markdownify as md
+import mistune
 
 # Create your views here.
 def agent_query(request):
@@ -22,7 +25,22 @@ def agent_query(request):
 # View Trip Details
 def trip_detail(request, trip_id):
     trip = Trip.objects.get(id=trip_id)
-    return render(request, 'travel/trip_detail.html', {'trip': trip})
+    # markdowner = markdown2.Markdown()
+    # trip.result = markdowner.convert(md(trip.result))
+    return HttpResponse(f"""
+                        <p>
+                            <strong>
+                                Query:
+                            </strong> 
+                            {trip.query}
+                        </p>
+                        <p>
+                            <strong>
+                                Result:
+                            </strong> 
+                            {mistune.html(trip.result)}
+                        </p>
+                        """)
 
 def print_api_post(request):
     if request.method == 'POST':
