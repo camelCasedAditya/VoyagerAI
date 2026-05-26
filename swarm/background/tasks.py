@@ -5,7 +5,7 @@ import time
 import requests
 import os
 
-
+# Background task used for testing
 @celery_app.task()
 def delay_print():
     print("START")
@@ -18,6 +18,7 @@ def delay_print():
     
     print("This is a delayed print task.")
 
+# Import needed libraries
 from langchain.agents import create_agent
 from langchain.agents.middleware import ToolRetryMiddleware, ModelRetryMiddleware
 from langchain_cerebras import ChatCerebras
@@ -31,6 +32,7 @@ from celery import shared_task
 from travel.models import Trip
 from langchain_core.tools import tool
 
+# Testing tool for AI to send update to frontend
 @tool("send_update")
 def send_update(text):
     """SENDS AN PROGRESS UPDATE TO THE FRONTEND. TAKES ONE PARARMETER, text, WHICH IS THE UPDATE TO SEND TO THE FRONTEND. RETURNS THE STATUS CODE OF THE POST REQUEST TO THE FRONTEND."""
@@ -41,24 +43,25 @@ def send_update(text):
     x = requests.post(url, json=myobj, timeout=10, headers=headers)
     return x.status_code
 
-
+# Background task that runs the agent to plan the trip
 @celery_app.task()
 def plan_trip(prompt, trip_id):
-    trip = Trip.objects.get(id=trip_id)
     # api_key = os.getenv("CEREBRAS_API_KEY", "")
     # model_name = os.getenv("CEREBRAS_MODEL", "")
+
+    # Initializes langchain model with api key and model name
     api_key = os.getenv("GROQ_API_KEY", "")
     model_name = "openai/gpt-oss-120b"
-
     llm = ChatGroq(model=model_name, api_key=api_key)
 
+    # Configures retry middleware for handling LLM call and tool execution failures
     retry_middleware = ToolRetryMiddleware(max_retries=8, tools=[find_hotels, find_food_places, geocode_distance_calculator, scrape_flights_ui], backoff_factor=2, initial_delay=1, max_delay=30)
     model_retry_middleware = ModelRetryMiddleware(max_retries=8, backoff_factor=2, initial_delay=1, max_delay=30)
 
+    # Creates the trip planning agent with system prompt and curated tool set
     agent = create_agent(
         llm, 
-        # tools=[get_hotels, geocode_distance_calculator, search_yelp, scrape_flights_ui, send_update],
-        tools=[find_hotels, find_food_places, geocode_distance_calculator, scrape_flights_ui],
+        tools=[find_hotels, find_food_places, geocode_distance_calculator, scrape_flights_ui, send_update],
         middleware=[retry_middleware, model_retry_middleware],
         system_prompt="""
             You are a expert travel agent that helps customers find the best hotels, restaurants, and flights for their trips.
@@ -94,7 +97,9 @@ def plan_trip(prompt, trip_id):
         }
     )
 
-    trip.result = response["messages"][-1].content
-    trip.save(update_fields=['result'])
+    # Saves the trip plan in markdown format to the DB securely
+    result_text = response["messages"][-1].content
+    Trip.objects.filter(id=trip_id).update(result=result_text)
+    print(f"Final trip plan: {result_text}")
 
-    return response["messages"][-1].content
+    return result_text

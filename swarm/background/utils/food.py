@@ -5,6 +5,9 @@ import json
 from langchain_core.tools import tool
 load_dotenv()
 
+# LEGACY FOOD PLACE RETRIEVAL CODE
+# -------INACTIVE CODE BELOW-------
+
 @tool("search_yelp")
 def search_yelp(lat: float, lng: float, radius: int, limit: int, price: str, time: str, number_of_people: int, date: str, categories=None):
     """Search for businesses on Yelp. Takes the parameters lat: float, lng: float, radius: int, limit: int, price: str (e.g., "1,2,3,4" or "1,3" with 1 being the lowest price tier and 4 being the highest), time: str (e.g., "19:00" format is HH:MM), number_of_people: int, date: str (e.g., "2023-12-31"). Returns a list of businesses that match the search criteria."""

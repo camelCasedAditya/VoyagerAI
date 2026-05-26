@@ -2,75 +2,7 @@ import requests
 import json
 from langchain_core.tools import tool
 
-
-class Hotel:
-    def __init__(self, hotel_id, iata_code, dupe_id, chain_code, name, address, rating, price, latitude, longitude, city):
-        self.hotel_id = hotel_id
-        self.iata_code = iata_code
-        self.dupe_id = dupe_id
-        self.chain_code = chain_code
-        self.name = name
-        self.address = address
-        self.price = price
-        self.latitude = latitude
-        self.longitude = longitude
-        self.city = city
-    def print_info(self):
-        print(f"Hotel ID: {self.hotel_id}")
-        print(f"IATA Code: {self.iata_code}")
-        print(f"Dupe ID: {self.dupe_id}")
-        print(f"Chain Code: {self.chain_code}")
-        print(f"Hotel Name: {self.name}")
-        print(f"Address: {self.address}")
-        print(f"City: {self.city}")
-        print(f"Price: {self.price}")
-        print(f"Latitude: {self.latitude}")
-        print(f"Longitude: {self.longitude}")
-    def to_json(self):
-        return {
-            "hotel_id": self.hotel_id,
-            "iata_code": self.iata_code,
-            "dupe_id": self.dupe_id,
-            "chain_code": self.chain_code,
-            "name": self.name,
-            "address": self.address,
-            "price": self.price,
-            "latitude": self.latitude,
-            "longitude": self.longitude,
-            "city": self.city
-        }
-
-CLIENT_ID = "UeWgxTGaWBFrqGL7cmyfQveL511HYpNd"
-CLIENT_SECRET = "17lAz6FPkr6oAzbH"
-
-address = ""
-
-def get_hotel_details(hotel_ids, adults, check_in_date, check_out_date, room_quantity):
-    auth_response = requests.post(
-        "https://test.api.amadeus.com/v1/security/oauth2/token",
-        data={
-            "grant_type": "client_credentials",
-            "client_id": CLIENT_ID,
-            "client_secret": CLIENT_SECRET
-        }
-    )
-    access_token = auth_response.json()["access_token"]
-
-    response = requests.get(
-        f"https://test.api.amadeus.com/v3/shopping/hotel-offers",
-        headers={"Authorization": f"Bearer {access_token}"},
-        params={
-            'hotelIds': [hotel.hotel_id for hotel in hotel_ids],
-            'adults': adults,
-            'checkInDate': check_in_date,
-            'checkOutDate': check_out_date,
-            'roomQuantity': room_quantity,
-            'currency': 'USD'
-
-        }
-    )
-    return response.json()
-
+# Converts address to lat and long
 def gecode_address(address):
     address = address.replace(",", "").replace(" ", "+")
 
@@ -83,98 +15,7 @@ def gecode_address(address):
 
     return latitude, longitude
 
-@tool("get_hotels")
-def get_hotels(address: str) -> list[dict]:
-    """Get hotels near a given address."""
-
-    latitude, longitude = gecode_address(address)
-    print(f"Called tool with address: {address}.")
-    auth_response = requests.post(
-        "https://test.api.amadeus.com/v1/security/oauth2/token",
-        data={
-            "grant_type": "client_credentials",
-            "client_id": CLIENT_ID,
-            "client_secret": CLIENT_SECRET
-        }
-    )
-    access_token = auth_response.json()["access_token"]
-
-    response = requests.get(
-        "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-geocode",
-        headers={"Authorization": f"Bearer {access_token}"},
-        params={
-            "latitude": latitude,
-            "longitude": longitude,
-            "radius": 10,
-            "radiusUnit": "KM",
-            "hotelSource": "ALL"
-        }
-    )
-    print(f"Response status code: {response.status_code}")
-    print(f"Response content: {response.text}")
-    ids = []
-    parsed_data = parse_hotels(response.json())
-    details = get_hotel_details(parsed_data, 2, "2026-07-05", "2026-07-07", 1)
-    valid_ids = []
-    for index, hotel_data in enumerate(list(details.get("data", []))):
-        valid_ids.append((hotel_data["hotel"]["hotelId"], index))
-    final_hotels = []
-    for i in valid_ids:
-        for item in parsed_data:
-            if item.hotel_id == i[0]:
-                temp_object = item
-                temp_object.price = details["data"][i[1]]["offers"][0]["price"]["total"]
-                final_hotels.append(temp_object.to_json())
-    print(f"Found hotels: {final_hotels}")
-    return f"Here is a list of hotels within a 10 km radius of {address}: \n{final_hotels}"
-
-
-def parse_hotels(hotels_data):
-    list_of_hotels = []
-    with open("hotels_data.json", "w") as f:
-        json.dump(hotels_data, f, indent=4)
-
-    for i in range(len(hotels_data["data"])):
-        hotel_info = hotels_data["data"][i]
-        hotel_id = hotel_info.get("hotelId")
-        iata_code = hotel_info.get("iataCode")
-        dupe_id = hotel_info.get("dupeId")
-        chain_code = hotel_info.get("chainCode")
-        name = hotel_info.get("name", "N/A")
-
-        address_info = hotel_info.get("address", {})
-        lines = address_info.get("lines", [])
-        address_parts = []
-        if lines:
-            address_parts.append(", ".join(lines))
-        for key in ("cityName", "stateCode", "countryCode", "postalCode"):
-            value = address_info.get(key)
-            if value:
-                address_parts.append(value)
-        address = ", ".join(address_parts) if address_parts else "N/A"
-        rating=None
-        price=None
-        geo_code = hotel_info.get("geoCode", {})
-        latitude = geo_code.get("latitude")
-        longitude = geo_code.get("longitude")
-        city = address_info.get("cityName", "N/A")
-
-        hotel = Hotel(
-            hotel_id=hotel_id,
-            iata_code=iata_code,
-            dupe_id=dupe_id,
-            chain_code=chain_code,
-            name=name,
-            address=address,
-            rating=rating,
-            price=price,
-            latitude=latitude,
-            longitude=longitude,
-            city=city
-        )
-        list_of_hotels.append(hotel)
-    return list_of_hotels
-
+# Used for the agent to find the distance between two addresses
 @tool("geocode_distance_calculator")
 def geocode_distance_calculator(address1: str, address2: str) -> float:
     """Calculate the distance in kilometers between two addresses."""
@@ -192,6 +33,170 @@ def geocode_distance_calculator(address1: str, address2: str) -> float:
     r = 6371
     print (f"Calculated distance between {address1} and {address2} is {c * r} km.")
     return c * r
+
+# OLD HOTEL CODE FOR USING AMADEUS API BEFORE IT WAS STOPPED
+
+# class Hotel:
+#     def __init__(self, hotel_id, iata_code, dupe_id, chain_code, name, address, rating, price, latitude, longitude, city):
+#         self.hotel_id = hotel_id
+#         self.iata_code = iata_code
+#         self.dupe_id = dupe_id
+#         self.chain_code = chain_code
+#         self.name = name
+#         self.address = address
+#         self.price = price
+#         self.latitude = latitude
+#         self.longitude = longitude
+#         self.city = city
+#     def print_info(self):
+#         print(f"Hotel ID: {self.hotel_id}")
+#         print(f"IATA Code: {self.iata_code}")
+#         print(f"Dupe ID: {self.dupe_id}")
+#         print(f"Chain Code: {self.chain_code}")
+#         print(f"Hotel Name: {self.name}")
+#         print(f"Address: {self.address}")
+#         print(f"City: {self.city}")
+#         print(f"Price: {self.price}")
+#         print(f"Latitude: {self.latitude}")
+#         print(f"Longitude: {self.longitude}")
+#     def to_json(self):
+#         return {
+#             "hotel_id": self.hotel_id,
+#             "iata_code": self.iata_code,
+#             "dupe_id": self.dupe_id,
+#             "chain_code": self.chain_code,
+#             "name": self.name,
+#             "address": self.address,
+#             "price": self.price,
+#             "latitude": self.latitude,
+#             "longitude": self.longitude,
+#             "city": self.city
+#         }
+
+# CLIENT_ID = "UeWgxTGaWBFrqGL7cmyfQveL511HYpNd"
+# CLIENT_SECRET = "17lAz6FPkr6oAzbH"
+
+# address = ""
+
+# def get_hotel_details(hotel_ids, adults, check_in_date, check_out_date, room_quantity):
+#     auth_response = requests.post(
+#         "https://test.api.amadeus.com/v1/security/oauth2/token",
+#         data={
+#             "grant_type": "client_credentials",
+#             "client_id": CLIENT_ID,
+#             "client_secret": CLIENT_SECRET
+#         }
+#     )
+#     access_token = auth_response.json()["access_token"]
+
+#     response = requests.get(
+#         f"https://test.api.amadeus.com/v3/shopping/hotel-offers",
+#         headers={"Authorization": f"Bearer {access_token}"},
+#         params={
+#             'hotelIds': [hotel.hotel_id for hotel in hotel_ids],
+#             'adults': adults,
+#             'checkInDate': check_in_date,
+#             'checkOutDate': check_out_date,
+#             'roomQuantity': room_quantity,
+#             'currency': 'USD'
+
+#         }
+#     )
+#     return response.json()
+
+# @tool("get_hotels")
+# def get_hotels(address: str) -> list[dict]:
+#     """Get hotels near a given address."""
+
+#     latitude, longitude = gecode_address(address)
+#     print(f"Called tool with address: {address}.")
+#     auth_response = requests.post(
+#         "https://test.api.amadeus.com/v1/security/oauth2/token",
+#         data={
+#             "grant_type": "client_credentials",
+#             "client_id": CLIENT_ID,
+#             "client_secret": CLIENT_SECRET
+#         }
+#     )
+#     access_token = auth_response.json()["access_token"]
+
+#     response = requests.get(
+#         "https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-geocode",
+#         headers={"Authorization": f"Bearer {access_token}"},
+#         params={
+#             "latitude": latitude,
+#             "longitude": longitude,
+#             "radius": 10,
+#             "radiusUnit": "KM",
+#             "hotelSource": "ALL"
+#         }
+#     )
+#     print(f"Response status code: {response.status_code}")
+#     print(f"Response content: {response.text}")
+#     ids = []
+#     parsed_data = parse_hotels(response.json())
+#     details = get_hotel_details(parsed_data, 2, "2026-07-05", "2026-07-07", 1)
+#     valid_ids = []
+#     for index, hotel_data in enumerate(list(details.get("data", []))):
+#         valid_ids.append((hotel_data["hotel"]["hotelId"], index))
+#     final_hotels = []
+#     for i in valid_ids:
+#         for item in parsed_data:
+#             if item.hotel_id == i[0]:
+#                 temp_object = item
+#                 temp_object.price = details["data"][i[1]]["offers"][0]["price"]["total"]
+#                 final_hotels.append(temp_object.to_json())
+#     print(f"Found hotels: {final_hotels}")
+#     return f"Here is a list of hotels within a 10 km radius of {address}: \n{final_hotels}"
+
+
+# def parse_hotels(hotels_data):
+#     list_of_hotels = []
+#     with open("hotels_data.json", "w") as f:
+#         json.dump(hotels_data, f, indent=4)
+
+#     for i in range(len(hotels_data["data"])):
+#         hotel_info = hotels_data["data"][i]
+#         hotel_id = hotel_info.get("hotelId")
+#         iata_code = hotel_info.get("iataCode")
+#         dupe_id = hotel_info.get("dupeId")
+#         chain_code = hotel_info.get("chainCode")
+#         name = hotel_info.get("name", "N/A")
+
+#         address_info = hotel_info.get("address", {})
+#         lines = address_info.get("lines", [])
+#         address_parts = []
+#         if lines:
+#             address_parts.append(", ".join(lines))
+#         for key in ("cityName", "stateCode", "countryCode", "postalCode"):
+#             value = address_info.get(key)
+#             if value:
+#                 address_parts.append(value)
+#         address = ", ".join(address_parts) if address_parts else "N/A"
+#         rating=None
+#         price=None
+#         geo_code = hotel_info.get("geoCode", {})
+#         latitude = geo_code.get("latitude")
+#         longitude = geo_code.get("longitude")
+#         city = address_info.get("cityName", "N/A")
+
+#         hotel = Hotel(
+#             hotel_id=hotel_id,
+#             iata_code=iata_code,
+#             dupe_id=dupe_id,
+#             chain_code=chain_code,
+#             name=name,
+#             address=address,
+#             rating=rating,
+#             price=price,
+#             latitude=latitude,
+#             longitude=longitude,
+#             city=city
+#         )
+#         list_of_hotels.append(hotel)
+#     return list_of_hotels
+
+
 
 import serpapi
 

@@ -4,6 +4,8 @@ import requests
 from .tasks import delay_print
 from django.views.decorators.csrf import csrf_exempt
 
+# These views are for testing the background task functionality.
+
 # Create your views here.
 def index(request):
     if request.method == "POST":

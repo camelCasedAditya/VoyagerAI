@@ -1,3 +1,6 @@
+# Sets up Celery to run async background tasks and is configured to use Redis as a queue for tasks pending.
+# Allows Django app to run while long tasks are complete in the background
+
 import os
 from celery import Celery
 
