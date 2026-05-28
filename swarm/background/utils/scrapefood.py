@@ -1,59 +1,73 @@
 import os
 import json
-import time
-from cerebras.cloud.sdk import Cerebras
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
+from dotenv import load_dotenv
+import requests
 from langchain_core.tools import tool
-from token_count import TokenCount
 
-# Tool for the agent to use to find best food places near a location
+
+load_dotenv()
+
+
+GOOGLE_PLACES_API_KEY = os.getenv("GOOGLE_PLACES_API_KEY") or os.getenv("GOOGLE_API_KEY")
+
+
+def _geocode(address: str, api_key: str):
+    params = {"address": address, "key": api_key}
+    resp = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params=params, timeout=20)
+    resp.raise_for_status()
+    data = resp.json()
+    results = data.get("results") or []
+    if not results:
+        return None
+    loc = results[0].get("geometry", {}).get("location")
+    if not loc:
+        return None
+    return loc.get("lat"), loc.get("lng")
+
+
 @tool("find_food_places")
 def find_food_places(address: str) -> str:
-    """Get food places near a given address."""
+    """Minimal restaurant lookup: geocode the address and run a nearby search.
 
-    # Put query into format so it can be searches through the url
-    text = (f"food near {address}").replace(" ", "+")
+    Returns a plain-text list (one entry per line) similar to the original Selenium scraper.
+    """
 
-    url = f"https://www.google.com/maps/search/{text}/"
+    if not GOOGLE_PLACES_API_KEY:
+        return "GOOGLE_PLACES_API_KEY not configured"
 
-    query = f"food near {address}"
+    # support passing lat,lng directly
+    lat = lng = None
+    if isinstance(address, str) and "," in address:
+        parts = [p.strip() for p in address.split(",")]
+        if len(parts) >= 2:
+            try:
+                lat = float(parts[0]); lng = float(parts[1])
+            except Exception:
+                lat = lng = None
 
-    # Initialize selenium browser and scraper
-    options = webdriver.ChromeOptions()
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+    if lat is None or lng is None:
+        geo = _geocode(address, GOOGLE_PLACES_API_KEY)
+        if not geo:
+            return ""
+        lat, lng = geo
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    # wait = WebDriverWait(driver, 20)
+    params = {
+        "location": f"{lat},{lng}",
+        "radius": 5000,
+        "type": "restaurant",
+        "key": GOOGLE_PLACES_API_KEY,
+    }
+    resp = requests.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json", params=params, timeout=20)
+    resp.raise_for_status()
+    data = resp.json()
 
-    # Go to the url with the query loaded in
-    driver.get(url)
+    entries = []
+    for place in data.get("results", []) or []:
+        name = place.get("name")
+        vicinity = place.get("vicinity") or place.get("formatted_address")
+        rating = place.get("rating")
+        parts = [p for p in [name, vicinity, f"rating:{rating}" if rating is not None else None] if p]
+        entries.append(" - ".join(parts))
 
-    # Grab all elements with role of article which is the element containing restaurant details
-    food = WebDriverWait(driver, 20).until(
-        EC.presence_of_all_elements_located((By.XPATH, "//div[@role='article']"))
-    )
+    return "\n\n".join(entries)
 
-    # Array to store food place info
-    food_list = []
-
-    # Convert the elements to a python list
-    for i in food:
-        food_list.append(i.text)
-    print(f"Found {len(food_list)} food places near {address}")
-    tc = TokenCount("gpt-3.5-turbo")
-    tokens = tc.num_tokens_from_string("\n\n".join(food_list))
-    print(f"Token count for food places: {tokens}")
-
-    # Return the food places to the agent
-    return "\n\n".join(food_list)
-# find_food_places("cedar mill oregon")
